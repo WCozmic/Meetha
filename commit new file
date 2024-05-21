@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetha Sreedhar - Women's Committee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .post-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .post-form textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .post-form button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .post-form button:hover {
+            background-color: #45a049;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-list li {
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meetha Sreedhar - Chairman of Women's Committee</h1>
+    </header>
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello, I'm Meetha Sreedhar, the Chairman of the Women's Committee. I am passionate about motivating women to polish their talents and hobbies. This platform allows all our members to post their views, share their ideas, and showcase their talents. Together, we can uplift and support each other.</p>
+        </section>
+        <section>
+            <h2>Member Posts</h2>
+            <form class="post-form" id="postForm">
+                <textarea id="postContent" rows="4" placeholder="Share your thoughts and ideas..."></textarea>
+                <button type="button" onclick="addPost()">Post</button>
+            </form>
+            <ul class="post-list" id="postList">
+                <!-- Member posts will appear here -->
+            </ul>
+        </section>
+        <section>
+            <h2>Contact Me</h2>
+            <p>You can reach me through the following channels:</p>
+            <ul>
+                <li>Email: meetha@example.com</li>
+                <li>Twitter: <a href="https://twitter.com/meetha" target="_blank">@meetha</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/meetha" target="_blank">Meetha Sreedhar</a></li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        function addPost() {
+            const postContent = document.getElementById('postContent').value;
+            if(postContent.trim() !== "") {
+                const postList = document.getElementById('postList');
+                const newPost = document.createElement('li');
+                newPost.textContent = postContent;
+                postList.appendChild(newPost);
+                document.getElementById('postContent').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
